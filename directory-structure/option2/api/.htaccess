@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
-RewriteEngine on 
-RewriteRule !\.(js|ico|gif|jpg|png|css|html)$ index.php
-# or RewriteRule !\.(js|ico|gif|jpg|png|css|html)$ /index.php
+RewriteEngine On
+RewriteBase /api/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /api/index.php [L]
 </IfModule>
